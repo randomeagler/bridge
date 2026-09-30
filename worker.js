@@ -3,8 +3,6 @@ import { connect } from 'cloudflare:sockets';
 export default {
   async fetch(req, env) {
     if (req.headers.get('Upgrade') !== 'websocket') return new Response('ok');
-    if (new URL(req.url).searchParams.get('token') !== env.TOKEN)
-      return new Response('forbidden', { status: 403 });
 
     const [client, server] = Object.values(new WebSocketPair());
     server.accept();
