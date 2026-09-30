@@ -1,0 +1,7 @@
+name = "ssh-bridge"
+main = "worker.js"
+compatibility_date = "2026-09-01"
+
+[vars]
+TARGET_HOST = "vps.dunder.qzz.io"   # must be publicly reachable
+TARGET_PORT = "22"
